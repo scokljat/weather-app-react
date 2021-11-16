@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+.container h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #3f3351;
+}
+.container input {
+  margin: 10px;
+  height: 20px;
+  width: 40%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  background-color: #fbf3e4;
+}
+.container button {
+  width: 15%;
+  height: 40px;
+  border-radius: 5px;
+  border: 0;
+  background-color: #3f3351;
+  color: #fff;
+  margin: 20px;
+}
+.temperature {
+  padding: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #3f3351;
+}
