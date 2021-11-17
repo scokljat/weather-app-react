@@ -29,10 +29,12 @@ function App() {
   };
   const changeHandlerCity = (e) => {
     setCity(e.target.value);
+    if (!city || city === " ") return;
   };
 
   const changeHandlerCountry = (e) => {
     setCountry(e.target.value);
+    if (!country || country === " ") return;
   };
 
   console.log(country);
