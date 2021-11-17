@@ -7,7 +7,6 @@ function App() {
   const [humidity, setHumidity] = useState(" ");
   const [wind, setWind] = useState(" ");
   const [city, setCity] = useState("");
-
   const [country, setCountry] = useState("");
   const getWeather = (city, country) => {
     fetch(
@@ -23,21 +22,27 @@ function App() {
       })
       .catch((error) => {
         console.log(error);
-        setCity(" ");
-        setCountry(" ");
       });
   };
   const changeHandlerCity = (e) => {
     setCity(e.target.value);
-    if (!city || city === " ") return;
+    e.preventDefault();
   };
 
   const changeHandlerCountry = (e) => {
     setCountry(e.target.value);
-    if (!country || country === " ") return;
+    e.preventDefault();
   };
 
-  console.log(country);
+  const resetInputField = () => {
+    setCountry(" ");
+    setCity(" ");
+    setTemperature(" ");
+    setDescription(" ");
+    setWind(" ");
+    setHumidity(" ");
+  };
+
   return (
     <div className="container">
       <h1>Weather app</h1>
@@ -53,13 +58,19 @@ function App() {
         onChange={changeHandlerCountry}
         placeholder="Country"
       />
-      <button
-        onClick={() => {
-          getWeather(city, country);
-        }}
-      >
-        GET
-      </button>
+      <div className="wrapBtns">
+        <button
+          className="getBtn"
+          onClick={() => {
+            getWeather(city, country);
+          }}
+        >
+          GET
+        </button>
+        <button className="resetBtn" onClick={resetInputField}>
+          Reset
+        </button>
+      </div>
       <div className="temperature">
         Temperature: {temperature} °C <br /> Description: {description} <br />{" "}
         Humidity: {humidity} % <br />

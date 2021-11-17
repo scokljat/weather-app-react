@@ -19,7 +19,8 @@
   border: 0;
   background-color: #fbf3e4;
 }
-.container button {
+
+.getBtn {
   width: 15%;
   height: 40px;
   border-radius: 5px;
@@ -33,4 +34,18 @@
   font-size: 25px;
   font-weight: bold;
   color: #3f3351;
+}
+.resetBtn {
+  width: 10%;
+  height: 40px;
+  border-radius: 5px;
+  border: 0;
+  background-color: #3f3351;
+  color: #fff;
+  margin: 20px;
+}
+.wrapBtns {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
