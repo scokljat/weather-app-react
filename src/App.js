@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "date-fns";
 import "./app.css";
 
 function App() {
@@ -42,6 +43,35 @@ function App() {
     setWind(" ");
     setHumidity(" ");
   };
+  const dateBuilder = (e) => {
+    let months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+    ];
+    let day = days[e.getDay()];
+    let date = e.getDate();
+    let month = months[e.getMonth()];
+    let year = e.getFullYear();
+    return `${day} ${date} ${month}  ${year}`;
+  };
 
   return (
     <div className="container">
@@ -71,7 +101,8 @@ function App() {
           Reset
         </button>
       </div>
-      <div className="temperature">
+      <div className="textContent">{dateBuilder(new Date())}</div>
+      <div className="textContent">
         Temperature: {temperature} °C <br /> Description: {description} <br />{" "}
         Humidity: {humidity} % <br />
         Speed of wind: {wind} <br />

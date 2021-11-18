@@ -29,11 +29,14 @@
   color: #fff;
   margin: 20px;
 }
-.temperature {
-  padding: 30px;
+.textContent {
+  padding: 10px;
+  margin: 10px;
   font-size: 25px;
   font-weight: bold;
   color: #3f3351;
+  background-color: #fbf3e4;
+  border-radius: 5px;
 }
 .resetBtn {
   width: 10%;
